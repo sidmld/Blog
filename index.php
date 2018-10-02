@@ -1,6 +1,9 @@
 <?php
+require 'lib/autoload.php';
 
-require('controller/frontend.php');
+//require('controller/frontend.php');
+
+$controller = new Frontend();
 
 (isset($_GET['action'])) ? $action = $_GET['action'] : $action = 'listPosts';
 
@@ -8,20 +11,20 @@ try{
       switch ($action)
       {
         case 'listPosts' :
-          listPosts();
+            $controller->listPosts();
           break;
 
         case 'post' :
-          post();
+            $controller->post();
           break;
         case 'addComment' :
-          addComment($_GET['id'],$_POST['author'],$_POST['comment']);
+            $controller->addComment($_GET['id'],$_POST['author'],$_POST['comment']);
           break;
         case 'addPost' :
-          addPost($_POST['title'],$_POST['content']);
+            $controller->addPost($_POST['title'],$_POST['content']);
           break;
         default :
-          listPosts();
+            $controller->listPosts();
       }
 
 

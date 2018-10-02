@@ -1,7 +1,7 @@
 <?php
 
-require_once('Connect.php');
-require_once('Entity/Post.php');
+/*require_once('Connect.php');
+require_once('Entity/Post.php');*/
 
 class PostManager extends Connect
 {
